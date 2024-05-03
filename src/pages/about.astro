@@ -1,7 +1,5 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 interface Props {
   firstName: string;
@@ -9,8 +7,6 @@ interface Props {
   occupation: string;
   hobbies: string[];
 }
-
-const pageTitle = 'Sobre mi';
 
 const identity: Props = {
   firstName: 'Sarah',
@@ -24,30 +20,9 @@ const skills: string[] = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Redacc
 const happy: boolean = true;
 const finished: boolean = false;
 const goal: number = 3;
-
-const skillColor: string = 'navy';
-const fontWeight: number = 400;
-const textCase: string = 'uppercase';
 ---
 
-<header>
-  <title>{pageTitle}</title>
-  <style define:vars={{ skillColor, fontWeight, textCase }}>
-    /* h1 {
-      color: purple;
-      font-size: 4rem;
-    } */
-    .skill {
-      color: var(--skillColor);
-      font-weight: var(--fontWeight);
-      text-transform: var(--textCase);
-    }
-  </style>
-</header>
-<body>
-  <Header />
-
-  <h1>{pageTitle}</h1>
+<BaseLayout pageTitle="About">
   <h2>... ¡y mi nuevo sitio Astro!</h2>
 
   <ul>
@@ -71,9 +46,4 @@ const textCase: string = 'uppercase';
   {finished && <p>¡He terminado este tutorial!</p>}
 
   {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
-
-  <Footer />
-  <script>
-    import '../scripts/menu.js';
-  </script>
-</body>
+</BaseLayout>
