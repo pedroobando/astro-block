@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { ConfettiPress } from '../components/ConfettiPress';
 
 interface Props {
   firstName: string;
@@ -18,7 +19,7 @@ const identity: Props = {
 const skills: string[] = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Redacción de documentos'];
 
 const happy: boolean = true;
-const finished: boolean = false;
+const finished = true;
 const goal: number = 3;
 ---
 
@@ -46,4 +47,7 @@ const goal: number = 3;
   {finished && <p>¡He terminado este tutorial!</p>}
 
   {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+  <hr />
+
+  <ConfettiPress client:load />
 </BaseLayout>

@@ -11,8 +11,15 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/preact": "^3.2.0",
+    "@astrojs/rss": "^4.0.5",
     "@astrojs/ts-plugin": "^1.6.1",
     "astro": "^4.7.1",
+    "canvas-confetti": "^1.9.3",
+    "preact": "^10.21.0",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.6.4"
   }
 }
